@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Love Story Day//Andrey and Irina//RU
+BEGIN:VEVENT
+UID:andrey-irina-20270708@lovestoryday.ru
+DTSTAMP:20261109T100000Z
+DTSTART:20270708T120000Z
+DTEND:20270708T193000Z
+SUMMARY:Свадьба Андрея и Ирины
+LOCATION:Ставрополь\, Хутор Грушевый\, район Волчьи ворот 1
+DESCRIPTION:15:00 сбор гостей\n16:00 выездная регистрация\n17:00 празднование\n22:00 салют. Время московское.
+END:VEVENT
+END:VCALENDAR

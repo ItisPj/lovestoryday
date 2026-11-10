@@ -1,0 +1,30 @@
+name: Publish wedding invitation
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/configure-pages@v5
+      - name: Download invitation music
+        run: |
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 https://rsvp.lovestoryday.ru/love-between-lines-audio.mp3 -o site/love-between-lines-audio.mp3
+          echo '7017e068fbe96ad6156c962feb0141b4a6c67d8734f3290055e41274d3171164  site/love-between-lines-audio.mp3' | sha256sum --check
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
+        id: deployment
