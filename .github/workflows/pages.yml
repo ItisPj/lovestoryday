@@ -21,8 +21,8 @@ jobs:
       - uses: actions/configure-pages@v5
       - name: Download invitation music
         run: |
-          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 https://rsvp.lovestoryday.ru/beloe-plate.mp3 -o site/beloe-plate.mp3
-          echo 'b4b55aa97e257e3d56cf94d824ad6e4d5293369495d99cf1327b929d43756a8e  site/beloe-plate.mp3' | sha256sum --check
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 https://rsvp.lovestoryday.ru/budu-vsegda-s-toboy.mp3 -o site/budu-vsegda-s-toboy.mp3
+          echo '98fd45ae084446e6409dc76d4907a8348493a10f2f585d3a7cd999954010fbf7  site/budu-vsegda-s-toboy.mp3' | sha256sum --check
       - uses: actions/upload-pages-artifact@v4
         with:
           path: site
